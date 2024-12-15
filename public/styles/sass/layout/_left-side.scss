@@ -5,39 +5,55 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 2.6rem;
+  .input-icon-wrapper {
+    border-radius: 0.8rem;
+    height: 4.8rem;
+    width: 100%;
+
+    // background-color: coral;
+    .icon-container {
+      position: absolute;
+      left: 1rem;
+      top: 0;
+      height: 30%;
+      transform: translateY(50%);
+      z-index: 20000;
+    }
+  }
 
   form {
     label {
+      margin-bottom: 0.4rem;
       text-transform: capitalize;
       display: block;
       font-size: 1.4rem;
       color: variables.$dark-grayish-cyan;
     }
     input {
-      border-radius: 0.8rem;
       font-size: 2.8rem;
       font-weight: 700;
-      height: 4.8rem;
       width: 100%;
+      border-radius: inherit;
 
       text-align: right;
       background-color: variables.$very-light-grayish-cyan;
-      
+
       color: variables.$very-dark-cyan;
       padding: 1rem 2rem;
 
-      &::placeholder{
+      &::placeholder {
         color: hsl(180, 11%, 68%);
       }
-      &:focus{
-      background-color: variables.$light-grayish-cyan;
-        
+      &:focus {
+        background-color: variables.$light-grayish-cyan;
+        border: 2px solid hsl(172, 30%, 50%);
       }
     }
   }
 
   .select-tip-container {
     p {
+      margin-bottom: 0.8rem;
       font-size: 1.4rem;
       color: variables.$dark-grayish-cyan;
     }
@@ -56,6 +72,15 @@
         border-radius: 0.8rem;
         background-color: variables.$very-dark-cyan;
         color: variables.$white;
+
+        &.active {
+          background-color: hsl(172, 66%, 45%);
+          color: variables.$very-dark-cyan;
+        }
+        &:hover {
+          background-color: hsl(173, 60%, 77%);
+          color: variables.$very-dark-cyan;
+        }
       }
       .custom-button {
         background-color: variables.$very-light-grayish-cyan;

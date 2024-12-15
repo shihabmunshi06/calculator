@@ -48,15 +48,20 @@ export default function Input({ inputName }) {
     return (
         <form action="submit" onSubmit={(e) => handleSubmit(e, inputName)}>
             <Label labelname={inputName} />
+            <div className="input-icon-wrapper">
+                <div className="icon-container">
+                    <img src={`./images/${inputName === "bill" ?"icon-dollar.svg": "icon-person.svg"}`} alt="" />
+                </div>
+                <input
+                    typeof="text"
+                    value={inputName === "bill" ? bill : people}
+                    name={inputName}
+                    id={inputName}
+                    onChange={handleChange}
+                    placeholder="0"
+                />
+            </div>
 
-            <input
-                typeof="text"
-                value={inputName === "bill" ? bill : people}
-                name={inputName}
-                id={inputName}
-                onChange={handleChange}
-                placeholder="0"
-            />
         </form>
     );
 }

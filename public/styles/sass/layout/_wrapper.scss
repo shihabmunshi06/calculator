@@ -2,7 +2,9 @@
 
 .main-wrapper {
   min-width: 375px;
-  @extend %flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: variables.$light-grayish-cyan;
 
   min-height: 100vh;
@@ -10,6 +12,7 @@
 }
 
 .white-bg {
+  margin-bottom: clamp(2rem, 4vw + 1rem, 8rem);
   background-color: variables.$white;
   max-width: 92rem;
   min-height: 50rem;
@@ -38,7 +41,6 @@
 @media screen and (max-width: 910px) {
   .white-bg {
     max-width: 50rem;
-    margin-top: 12rem;
   }
 }
 
@@ -50,6 +52,5 @@
 @media screen and (max-width: 350px) {
   .white-bg {
     padding: 1rem;
-    margin-top: 6rem;
   }
 }

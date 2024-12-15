@@ -9,6 +9,8 @@
   border-radius: 0.8rem;
 
   .custom-input {
+    padding: 0 !important;
+    height: 100%;
     text-align: center;
     border: 1px solid #00474b;
 
@@ -19,11 +21,12 @@
       color: #587777;
     }
   }
-  .custom-error{
+  .custom-error {
     z-index: 2000000000;
     text-align: center;
     background-color: hsl(203, 50%, 97%);
     position: absolute;
+    color: hsl(15, 32%, 57%);
     top: 100%;
     transform: translateY(10%);
     padding: 4px;

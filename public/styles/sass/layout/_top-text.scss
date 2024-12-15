@@ -1,13 +1,11 @@
 @use "../global/variables";
 
 .splitter-text {
+  margin-top: clamp(2rem, 4vw + 1rem, 8rem);
+  margin-bottom: clamp(2rem, 4vw + 1rem, 8rem);
+
   color: #416264;
   text-transform: uppercase;
-
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, 60%);
 
   font-size: 2.4rem;
   span {

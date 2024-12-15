@@ -47,7 +47,7 @@ select {
   font-weight: inherit;
 }
 
-.main-wrapper, .right-side .dark-background, .right-side .dark-background .amount-divs-wrapper .amount-wrapper, .left-side .select-tip-container .tip-buttons-container, .left-side .select-tip-container .tip-buttons-container button {
+.right-side .dark-background, .right-side .dark-background .amount-divs-wrapper .amount-wrapper, .left-side .select-tip-container .tip-buttons-container, .left-side .select-tip-container .tip-buttons-container button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,18 +59,31 @@ select {
   justify-content: space-between;
   gap: 2.6rem;
 }
+.left-side .input-icon-wrapper {
+  border-radius: 0.8rem;
+  height: 4.8rem;
+  width: 100%;
+}
+.left-side .input-icon-wrapper .icon-container {
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  height: 30%;
+  transform: translateY(50%);
+  z-index: 20000;
+}
 .left-side form label {
+  margin-bottom: 0.4rem;
   text-transform: capitalize;
   display: block;
   font-size: 1.4rem;
   color: hsl(186, 14%, 43%);
 }
 .left-side form input {
-  border-radius: 0.8rem;
   font-size: 2.8rem;
   font-weight: 700;
-  height: 4.8rem;
   width: 100%;
+  border-radius: inherit;
   text-align: right;
   background-color: hsl(189, 41%, 97%);
   color: hsl(183, 100%, 15%);
@@ -81,8 +94,10 @@ select {
 }
 .left-side form input:focus {
   background-color: hsl(185, 41%, 84%);
+  border: 2px solid hsl(172, 30%, 50%);
 }
 .left-side .select-tip-container p {
+  margin-bottom: 0.8rem;
   font-size: 1.4rem;
   color: hsl(186, 14%, 43%);
 }
@@ -100,6 +115,14 @@ select {
   border-radius: 0.8rem;
   background-color: hsl(183, 100%, 15%);
   color: hsl(0, 0%, 100%);
+}
+.left-side .select-tip-container .tip-buttons-container button.active {
+  background-color: hsl(172, 66%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+.left-side .select-tip-container .tip-buttons-container button:hover {
+  background-color: hsl(173, 60%, 77%);
+  color: hsl(183, 100%, 15%);
 }
 .left-side .select-tip-container .tip-buttons-container .custom-button {
   background-color: hsl(189, 41%, 97%);
@@ -150,15 +173,23 @@ select {
 .right-side .reset-button-wrapper .reset:disabled {
   background-color: hsl(183, 79%, 24%);
 }
+.right-side .reset-button-wrapper .reset:not([disabled]):hover {
+  background-color: hsl(173, 60%, 77%);
+  color: hsl(183, 100%, 15%);
+}
 
 .main-wrapper {
   min-width: 375px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: hsl(185, 41%, 84%);
   min-height: 100vh;
   width: 100vw;
 }
 
 .white-bg {
+  margin-bottom: clamp(2rem, 4vw + 1rem, 8rem);
   background-color: hsl(0, 0%, 100%);
   max-width: 92rem;
   min-height: 50rem;
@@ -185,7 +216,6 @@ select {
 @media screen and (max-width: 910px) {
   .white-bg {
     max-width: 50rem;
-    margin-top: 12rem;
   }
 }
 @media screen and (max-width: 500px) {
@@ -196,16 +226,13 @@ select {
 @media screen and (max-width: 350px) {
   .white-bg {
     padding: 1rem;
-    margin-top: 6rem;
   }
 }
 .splitter-text {
+  margin-top: clamp(2rem, 4vw + 1rem, 8rem);
+  margin-bottom: clamp(2rem, 4vw + 1rem, 8rem);
   color: #416264;
   text-transform: uppercase;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, 60%);
   font-size: 2.4rem;
 }
 .splitter-text span {
@@ -223,6 +250,8 @@ select {
   border-radius: 0.8rem;
 }
 .custom-form .custom-input {
+  padding: 0 !important;
+  height: 100%;
   text-align: center;
   border: 1px solid #00474b;
   background-color: hsl(203, 50%, 97%);
@@ -236,6 +265,7 @@ select {
   text-align: center;
   background-color: hsl(203, 50%, 97%);
   position: absolute;
+  color: hsl(15, 32%, 57%);
   top: 100%;
   transform: translateY(10%);
   padding: 4px;

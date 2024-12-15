@@ -54,6 +54,10 @@
       &:disabled {
         background-color: hsl(183, 79%, 24%);
       }
+      &:not([disabled]):hover {
+        background-color: hsl(173, 60%, 77%);
+        color: variables.$very-dark-cyan;
+      }
     }
   }
 }

@@ -10,6 +10,12 @@ import { useDispatch } from "react-redux"
 export default function LeftSide() {
     const data = [5, 10, 15, 25, 50]
 
+
+    const [activeButton, setActiveButton] = useState(null);
+    const handleButtonClick = (number) => {
+        setActiveButton(number);  // Update active button state
+    }
+
     const dispatch = useDispatch();
 
     const [customTip, setCustomTip] = useState("");
@@ -18,6 +24,7 @@ export default function LeftSide() {
 
     const handleCustom = () => {
         setIsEditing(true)
+        setActiveButton(null)
     }
 
     const handleCustomSubmit = (e) => {
@@ -51,13 +58,9 @@ export default function LeftSide() {
 
 
     const handleBlur = () => {
-        // Trim leading/trailing whitespace and validate the input
-        if (!customTip.trim() || isNaN(customTip) || Number(customTip) <= 0) {
-            setError("Please enter a valid positive number.");
-            setCustomTip("");
-        } else {
-            setError("");
-        }
+        setCustomTip("");
+        setError("");
+        setIsEditing(false)
     };
 
 
@@ -67,10 +70,11 @@ export default function LeftSide() {
             <div className="select-tip-container">
                 <p>Select Tip %</p>
                 <div className="tip-buttons-container">
-                    {data.map(e => <Button key={e} number={e} />)}
+                    {data.map(e => <Button key={e} number={e} onButtonClick={handleButtonClick} isActive={activeButton === e} />)}
 
                     {isEditing ? (
                         <form className="custom-form" onSubmit={handleCustomSubmit}>
+
                             <input
                                 className="custom-input"
                                 type="text"
