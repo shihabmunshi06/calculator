@@ -1,0 +1,66 @@
+@use "../global/variables";
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2.6rem;
+
+  form {
+    label {
+      text-transform: capitalize;
+      display: block;
+      font-size: 1.4rem;
+      color: variables.$dark-grayish-cyan;
+    }
+    input {
+      border-radius: 0.8rem;
+      font-size: 2.8rem;
+      font-weight: 700;
+      height: 4.8rem;
+      width: 100%;
+
+      text-align: right;
+      background-color: variables.$very-light-grayish-cyan;
+      
+      color: variables.$very-dark-cyan;
+      padding: 1rem 2rem;
+
+      &::placeholder{
+        color: hsl(180, 11, 68);
+      }
+      &:focus{
+      background-color: variables.$light-grayish-cyan;
+        
+      }
+    }
+  }
+
+  .select-tip-container {
+    p {
+      font-size: 1.4rem;
+      color: variables.$dark-grayish-cyan;
+    }
+    .tip-buttons-container {
+      @extend %flex;
+      justify-content: flex-start;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+      button {
+        @extend%flex;
+        flex-grow: 1;
+        flex-shrink: 1;
+        width: 11rem;
+        max-width: 16rem;
+        height: 5rem;
+        border-radius: 0.8rem;
+        background-color: variables.$very-dark-cyan;
+        color: variables.$white;
+      }
+      .custom-button {
+        background-color: variables.$very-light-grayish-cyan;
+        color: variables.$dark-grayish-cyan;
+      }
+    }
+  }
+}

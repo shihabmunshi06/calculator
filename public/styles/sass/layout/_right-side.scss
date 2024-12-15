@@ -1,0 +1,59 @@
+@use "../global/variables";
+
+.right-side {
+  .dark-background {
+    @extend %flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: variables.$very-dark-cyan;
+    height: 100%;
+    width: 100%;
+    border-radius: 1.8rem;
+    gap: 6rem;
+
+    padding: 4rem;
+    > * {
+      width: 100%;
+    }
+
+    .amount-divs-wrapper {
+      .amount-wrapper {
+        @extend %flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .left {
+          h1 {
+            font-size: 1.8rem;
+            color: variables.$white;
+          }
+          p {
+            font-size: 1.2rem;
+            color: variables.$grayish-cyan;
+          }
+        }
+        .right {
+          p {
+            font-size: 5rem;
+            color: variables.$strong-cyan;
+          }
+        }
+      }
+    }
+  }
+  .reset-button-wrapper {
+    height: 4.3rem;
+    border-radius: 0.6rem;
+    .reset {
+      background-color: variables.$strong-cyan;
+      height: 100%;
+      width: 100%;
+      border-radius: inherit;
+      text-align: center;
+      color: variables.$very-dark-cyan;
+      &:disabled {
+        background-color: hsl(183, 79%, 24%);
+      }
+    }
+  }
+}

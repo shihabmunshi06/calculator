@@ -1,0 +1,55 @@
+@use "../global/variables";
+
+.main-wrapper {
+  min-width: 375px;
+  @extend %flex;
+  background-color: variables.$light-grayish-cyan;
+
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.white-bg {
+  background-color: variables.$white;
+  max-width: 92rem;
+  min-height: 50rem;
+  border-radius: 3rem;
+  padding: 4rem 3rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+
+  .left-side {
+    flex: 0 1 39rem;
+    min-width: 33rem;
+  }
+  .right-side {
+    flex: 1 1 22rem;
+    min-width: 33rem;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .main-wrapper {
+    padding: 0 4rem;
+  }
+}
+@media screen and (max-width: 910px) {
+  .white-bg {
+    max-width: 50rem;
+    margin-top: 12rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .main-wrapper {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 350px) {
+  .white-bg {
+    padding: 1rem;
+    margin-top: 6rem;
+  }
+}
