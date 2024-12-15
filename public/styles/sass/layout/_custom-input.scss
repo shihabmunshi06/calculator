@@ -12,7 +12,7 @@
     text-align: center;
     border: 1px solid #00474b;
 
-    background-color: hsl(203, 50, 97);
+    background-color: hsl(203, 50%, 97%);
     color: variables.$very-dark-cyan;
 
     &::placeholder {
@@ -22,7 +22,7 @@
   .custom-error{
     z-index: 2000000000;
     text-align: center;
-    background-color: hsl(203, 50, 97);
+    background-color: hsl(203, 50%, 97%);
     position: absolute;
     top: 100%;
     transform: translateY(10%);

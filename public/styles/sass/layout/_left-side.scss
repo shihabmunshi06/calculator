@@ -27,7 +27,7 @@
       padding: 1rem 2rem;
 
       &::placeholder{
-        color: hsl(180, 11, 68);
+        color: hsl(180, 11%, 68%);
       }
       &:focus{
       background-color: variables.$light-grayish-cyan;
